@@ -22,7 +22,7 @@ __ALIGNED(16) const float src_a[4] = {1, 2, 3, 4};
 __ALIGNED(16) const float src_b[4] = {5, 6, 7, 8};
 __ALIGNED(16) float dst[4]   = {0, 0, 0, 0};
 
-extern void myadd(const float *a, const float *b,float *dst,float nb);
+extern void myadd(const float *a, const float *b,float *dst,uint32_t nb);
 
 
 __attribute__((noreturn)) int testapp()
