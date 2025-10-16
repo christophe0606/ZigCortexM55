@@ -20,14 +20,14 @@
       "options": {
         "cwd": "${workspaceFolder}/zig"
       },
-      "command": "zig build",
+      "command": "zig build --release=fast",
       "problemMatcher": [],
       "dependsOn": []
     },
     {
       "label": "Disasm",
       "type": "shell",
-      "command": "/Volumes/Ext/vcpkg/artifacts/2139c4c6/compilers.arm.armclang/6.24.0/bin/fromelf  -c --output=test.dis ${workspaceFolder}/ARM/out/Testapp/ARMCLANG/Testapp.axf",
+      "command": "/Volumes/Ext/vcpkg/artifacts/2139c4c6/compilers.arm.armclang/6.24.0/bin/fromelf  --cpu=8.1-M.Main.mve.fp -c --output=test.dis ${workspaceFolder}/ARM/out/Testapp/ARMCLANG/Testapp.axf",
       "problemMatcher": [],
       "dependsOn": ["Build zig lib", "cmsis-csolution.build: Build"],
       "dependsOrder": "sequence",

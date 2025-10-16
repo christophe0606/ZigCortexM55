@@ -87,6 +87,6 @@ uv2csolution.log
 *base@*
 
 .zig-cache/
-.zig-out/
+zig-out/
 
 

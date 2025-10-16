@@ -16,16 +16,25 @@
 
 #include "testapp.h"
 #include <stdio.h>
+#include "cmsis_compiler.h"
 
-extern uint32_t add(uint32_t a, uint32_t b);
+__ALIGNED(16) const float src_a[4] = {1, 2, 3, 4};
+__ALIGNED(16) const float src_b[4] = {5, 6, 7, 8};
+__ALIGNED(16) float dst[4]   = {0, 0, 0, 0};
+
+extern void myadd(const float *a, const float *b,float *dst,float nb);
 
 
 __attribute__((noreturn)) int testapp()
 {
 
     //stdout_init();
-    uint32_t res =add(1,2);
-    printf("\r\n= Blinky is running = %d\r\n",res);
+    myadd(src_a,src_b,dst,4);
+    printf("\r\n= Test is running =\r\n");
+    printf("src_a: %f %f %f %f\r\n",src_a[0],src_a[1],src_a[2],src_a[3]);
+    printf("src_b: %f %f %f %f\r\n",src_b[0],src_b[1],src_b[2],src_b[3]);
+    printf("dst:   %f %f %f %f\r\n",dst[0],dst[1],dst[2],dst[3]);
+    printf("= Test ended =\r\n");
 
 
     for(;;){}
