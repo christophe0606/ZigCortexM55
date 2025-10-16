@@ -12,9 +12,9 @@ pub fn build(b: *Build) void {
         .os_tag = .freestanding,
         .abi = .eabihf,
         .cpu_features_add = std.Target.arm.featureSet(&.{
-            .fp_armv8d16sp, // single-precision VFP in v8-M
-            .mve, // Helium (integer)
-            .mve_fp, // Helium FP (if your M55 has it)
+            .fp_armv8d16sp,
+            .mve,
+            .mve_fp,
         }),
     };
 
