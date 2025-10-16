@@ -1,0 +1,9 @@
+solution:
+  created-for: CMSIS-Toolbox@2.7.0
+  compiler: AC6
+  target-types:
+    - type: ARMCLANG
+      device: SSE-300-MPS3
+      optimize: debug
+  projects:
+    - project: Testapp.cproject.yml
